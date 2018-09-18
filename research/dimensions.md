@@ -3,7 +3,7 @@
 ## Erdtiefe
 10cm
 
-## Höhe sichtbarer Teil
+## Höhe sichtbarer Teil/Plexiglas
 30cm
 
 ## Höhe unsichtbarer Teil oben/unten
