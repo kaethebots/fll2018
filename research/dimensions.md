@@ -1,11 +1,14 @@
 # Abmessungen
 
 ## Erdtiefe
-10 cm
+10cm
 
 ## Höhe sichtbarer Teil
-30 cm
+30cm
 
 ## Höhe unsichtbarer Teil oben/unten
-5 cm für Technik unten
-5 cm für Technik oben
+5cm für Technik unten
+5cm für Technik oben
+
+## Grundfläche
+30cm²
