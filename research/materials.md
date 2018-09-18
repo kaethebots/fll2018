@@ -9,3 +9,7 @@
 - **evtl. Heizspirale** ist in der Erde vergraben
 - **Schlauch mit Löchern** ist auch in der Erde vergraben; transportiert Wasser
 - **Mikrocontroller** für Ansteuerung
+
+## Pflanzensachen
+- **Samen**
+- **Erde**
