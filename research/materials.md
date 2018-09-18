@@ -3,7 +3,7 @@
 ## "Hardware"
 - **Pappelsperrholz** für Wanne und undurchsichtige Teile
 - **Plexiglas** für Sichtscheiben
-- **Schüssel** für Erde
+- **Schüssel** für Erde (von IKEA?)
 
 ## Techn. Hardware
 - **evtl. Heizspirale** ist in der Erde vergraben
