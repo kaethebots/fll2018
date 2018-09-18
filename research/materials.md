@@ -12,4 +12,4 @@
 
 ## Pflanzensachen
 - **Samen** Kresse & Amaranth
-- **Erde**
+- **Erde** Standard-Pflanzenerde
