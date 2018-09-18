@@ -11,5 +11,5 @@
 - **Mikrocontroller** für Ansteuerung
 
 ## Pflanzensachen
-- **Samen**
+- **Samen** Kresse & Amaranth
 - **Erde**
