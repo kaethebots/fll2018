@@ -1,12 +1,16 @@
-i²c:
+# Bus-Protokolle
+
+## I²C:
 
 - master/slave
-- kein chipselect
-- relativ hohe bandbreite
+- kein Chipselect
+- relativ hohe Bandbreite
 
 
-spi:
+## SPI:
 
 - master/slave
-- chipselect
-- vollduplex
+- Chipselect
+- Vollduplex
+
+## Raspi 3 als Zentrale mit Touchscreen als Anzeige- und Steuermöglichkeit
