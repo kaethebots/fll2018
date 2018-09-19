@@ -1,3 +1,4 @@
+// von hier: https://www.arduino.cc/en/Tutorial/MasterWriter
 #include <Wire.h>
 
 void setup() {
