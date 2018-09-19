@@ -22,8 +22,8 @@ while True:
         continue
 
     writeNumber(senden)
-    print "Raspberry Schickt folgende Zahl: ", senden
+    print "Raspberry schickt folgende Zahl: ", senden
     time.sleep(1)
 
     empfang = readNumber()
-    print "Der Arduino empfengt/schickt folgende Zahl: ", empfang
+    print "Der Arduino empfängt/schickt folgende Zahl: ", empfang
