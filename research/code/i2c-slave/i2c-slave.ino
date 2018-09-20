@@ -1,4 +1,5 @@
-// von hier: https://www.arduino.cc/en/Tutorial/MasterWriter
+// origin: https://www.arduino.cc/en/Tutorial/MasterWriter
+// könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
 #include <Wire.h>
 
 void setup() {

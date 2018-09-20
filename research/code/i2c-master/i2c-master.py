@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# von hier: https://codingworld.io/project/den-arduino-mit-dem-raspberry-pi-verbinden-i2c
+# origin: https://codingworld.io/project/den-arduino-mit-dem-raspberry-pi-verbinden-i2c
 
 import smbus
 import time
