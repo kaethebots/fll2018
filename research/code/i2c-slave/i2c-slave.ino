@@ -2,10 +2,13 @@
 // könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
 #include <Wire.h>
 
+int i2cAddress = 8;
+
 void setup() {
-  Wire.begin(8);                // join i2c bus with address #8
-  Wire.onReceive(receiveEvent); // register event
-  Serial.begin(9600);           // start serial for output
+  Wire.begin(i2cAddress);       // join i2c bus
+  Wire.onReceive(recByteEvent); // register event
+  pinMode(13, OUTPUT);          // defines onboard led as output
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -14,11 +17,14 @@ void loop() {
 
 // function that executes whenever data is received from master
 // this function is registered as an event, see setup()
-void receiveEvent(int howMany) {
+void recByteEvent(int howMany) {
   while (1 < Wire.available()) { // loop through all but the last
-    char c = Wire.read(); // receive byte as a character
-    Serial.print(c);         // print the character
+    long recByte = Wire.read();  // receive byte as a character
+    Serial.print(recByte);       // print the received byte
+    if (recByte == 00001111){    // if the byte is 00001111, turn onboard led on and off
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    }
   }
-  int x = Wire.read();    // receive byte as an integer
-  Serial.println(x);         // print the integer
 }
