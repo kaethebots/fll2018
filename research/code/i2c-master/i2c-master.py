@@ -4,9 +4,11 @@
 
 import smbus
 import time
+from argparse import ArgumentParser
 bus = smbus.SMBus(1)
+parser = ArgumentParser()
 
-address = 0x05
+address = int(sys.argv[1]) # Bedarf einer weiteren Überarbeitung
 
 def writeNumber(value):
     bus.write_byte(address, value)
@@ -17,13 +19,13 @@ def readNumber():
     return number
 
 while True:
-    senden = input("Zahl zwischen 1 - 9: ")
+    senden = input("Geräteaddresse und -zustand: ")
     if not senden:
         continue
 
     writeNumber(senden)
-    print "Raspberry schickt folgende Zahl: ", senden
+    print "Raspberry schickt folgenden Wert: ", senden
     time.sleep(1)
 
     empfang = readNumber()
-    print "Der Arduino empfängt/schickt folgende Zahl: ", empfang
+    print "Der Arduino schickt folgenden Wert: ", empfang
