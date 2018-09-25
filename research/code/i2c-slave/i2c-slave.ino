@@ -29,5 +29,9 @@ void recByteEvent(int howMany) {
     {
       digitalWrite(13, LOW);
     }
+    else
+    {
+      Serial.print("Empfangenes Byte konnte nicht gelesen werden. Fehler.")
+    }
   }
 }
