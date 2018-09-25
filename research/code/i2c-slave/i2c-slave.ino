@@ -3,12 +3,15 @@
 #include <Wire.h>
 
 int i2cAddress = 8;
+int example = 1234;
 
 void setup() {
   Wire.begin(i2cAddress);       // join i2c bus
   Wire.onReceive(recByteEvent); // register event
+//Wire.onRequest(sendByteEvent);// register event
   pinMode(13, OUTPUT);          // defines onboard led as output
   Serial.begin(9600);
+  Serial.write("It works");
 }
 
 void loop() {
@@ -31,7 +34,11 @@ void recByteEvent(int howMany) {
     }
     else
     {
-      Serial.print("Empfangenes Byte konnte nicht gelesen werden. Fehler.");
+      Serial.print("Empfangenes Byte konnte nicht gelesen werden.");
     }
   }
+}
+
+void sendByteEvent() {
+  Wire.write(example)
 }
