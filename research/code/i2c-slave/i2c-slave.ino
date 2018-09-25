@@ -1,4 +1,3 @@
-// by karlbeecken and leonelbohnet
 // origin: https://www.arduino.cc/en/Tutorial/MasterWriter
 // könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
 #include <Wire.h>
@@ -19,13 +18,16 @@ void loop() {
 // function that executes whenever data is received from master
 // this function is registered as an event, see setup()
 void recByteEvent(int howMany) {
-  while (1 < Wire.available()) { // loop through all but the last
-    long recByte = Wire.read();  // receive byte as a character
-    Serial.print(recByte);       // print the received byte
-    if (recByte == 00001111){    // if the byte is 00001111, turn onboard led on and off
-    digitalWrite(13, HIGH);
-    delay(500);
-    digitalWrite(13, LOW);
+  while (1 < Wire.available()) {   // loop through all but the last
+    long recByte = Wire.read();    // receive byte as a character
+    Serial.print(recByte);         // print the received byte
+    if (recByte == 00001111)       // if the byte is 00001111, turn onboard led on
+    {
+      digitalWrite(13, HIGH);
+    }
+    else if (recByte == 00001000)  // if the byte is 0000100, turn onboard led off
+    {
+      digitalWrite(13, LOW);
     }
   }
 }
