@@ -25,7 +25,7 @@ void recByteEvent(int howMany) {
     {
       digitalWrite(13, HIGH);
     }
-    else if (recByte == 00001000)  // if the byte is 0000100, turn onboard led off
+    else if (recByte == 00001000)  // if the byte is 00001000, turn onboard led off
     {
       digitalWrite(13, LOW);
     }
