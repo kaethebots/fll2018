@@ -31,7 +31,7 @@ void recByteEvent(int howMany) {
     }
     else
     {
-      Serial.print("Empfangenes Byte konnte nicht gelesen werden. Fehler.")
+      Serial.print("Empfangenes Byte konnte nicht gelesen werden. Fehler.");
     }
   }
 }
