@@ -13,4 +13,4 @@
 - Chipselect
 - Vollduplex
 
-## Raspi 3 als Zentrale mit Touchscreen als Anzeige- und Steuermöglichkeit
+## Raspi als Zentrale mit LCD als Anzeige- und Steuermöglichkeit
