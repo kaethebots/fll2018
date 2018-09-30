@@ -40,5 +40,5 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write(example)
+  Wire.write(example);
 }
