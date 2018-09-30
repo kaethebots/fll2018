@@ -24,11 +24,11 @@ void recByteEvent(int howMany) {
   while (1 < Wire.available()) {   // loop through all but the last
     long recByte = Wire.read();    // receive byte as a character
     Serial.print(recByte);         // print the received byte
-    if (recByte == 00001111)       // if the byte is 00001111, turn onboard led on
+    if (recByte == 0000111)       // if the byte is 0000111, turn onboard led on
     {
       digitalWrite(13, HIGH);
     }
-    else if (recByte == 00001000)  // if the byte is 00001000, turn onboard led off
+    else if (recByte == 0000100)  // if the byte is 0000100, turn onboard led off
     {
       digitalWrite(13, LOW);
     }
