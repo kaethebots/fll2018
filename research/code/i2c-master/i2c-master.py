@@ -19,7 +19,7 @@ def readNumber():
     return number
 
 while True:
-    senden = raw_input("Geräteadresse und -zustand: ")
+    senden = raw_input("Geraeteaddresse und -zustand: ")
     if not senden:
         continue
 
