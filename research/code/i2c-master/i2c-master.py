@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 bus = smbus.SMBus(1)
 parser = ArgumentParser()
 
-address = 8 # Bedarf einer weiteren Überarbeitung
+address = 8
 
 def writeNumber(value):
     bus.write_byte(address, value)
