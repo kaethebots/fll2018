@@ -3,7 +3,7 @@
 #include <Wire.h>
 
 int i2cAddress = 8;
-int example = 0;
+int example = 0b10;
 
 void setup() {
   Wire.begin(i2cAddress);       // join i2c bus
@@ -28,7 +28,7 @@ void recByteEvent(int howMany) {
     {
       digitalWrite(3, HIGH);
     }
-    else if (recByte == 00001000)  // if the byte is 0000100, turn onboard led off
+    else if (recByte == 0000100)  // if the byte is 0000100, turn onboard led off
     {
       digitalWrite(13, LOW);
     }
