@@ -4,41 +4,55 @@
 
 int i2cAddress = 8;
 int example = 0b10;
+int sw01;
 
 void setup() {
-  Wire.begin(i2cAddress);       // join i2c bus
-  Wire.onReceive(recByteEvent); // register event
-  Wire.onRequest(sendByteEvent);// register event
-  pinMode(3, OUTPUT);          // defines onboard led as output
+  Wire.begin(i2cAddress);         // join i2c bus
+  Wire.onReceive(recByteEvent);   // register event
+  Wire.onRequest(sendByteEvent);  // register event
+  pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
+  pinMode(2, INPUT_PULLUP); 
   Serial.begin(9600);
-  Serial.write("It works");
+  int sw01 = 0;
+  Serial.println("Startup done");
 }
 
 void loop() {
+  int sensorVal = digitalRead(2);
+  if (sensorVal == HIGH) {
+    int sw01 = 1;
+  } else {
+    int sw01 = 0;
+  }
   delay(100);
 }
 
 // function that executes whenever data is received from master
 // this function is registered as an event, see setup()
 void recByteEvent(int howMany) {
-  while (1 < Wire.available()) {   // loop through all but the last
-    char recByte = Wire.read();    // receive byte as a character
-    Serial.print(recByte);         // print the received byte
-    if (recByte == 585)        // if the byte is 0000111, turn onboard led on
+  Serial.print(howMany);
+  while (0 < Wire.available()) {   // loop through all but the last
+    Serial.println(0);
+    int recByte = Wire.read();    // receive byte as a character
+    Serial.println(recByte);         // print the received byte
+    if (recByte == 73)        // if the byte is 0000111, turn onboard led on
     {
-      digitalWrite(3, HIGH);
+      digitalWrite(LED_BUILTIN, HIGH);
+      Serial.println("led on");
     }
-    else if (recByte == 0000100)  // if the byte is 0000100, turn onboard led off
+    else if (recByte == 74)  // if the byte is 0000100, turn onboard led off
     {
       digitalWrite(13, LOW);
+      Serial.println("led off");
     }
     else
     {
-      Serial.print("Empfangenes Byte konnte nicht gelesen werden.");
+      Serial.println("Empfangenes Byte konnte nicht gelesen werden.");
     }
   }
 }
 
 void sendByteEvent() {
-  Wire.write(example);
+  Wire.write(sw01);
 }
+
