@@ -1,16 +1,9 @@
-# Bus-Protokolle
+# I²C-Adressen:
 
-## I²C:
+0x00 - 0x0a:  reserviert
+0x28 - 0x31:  Status / Einstellungen
+0x46 - 0x4f:  Licht
+0x50 - 0x59   Lüfter (Drehzahl von 0-100%)
 
-- master/slave
-- kein Chipselect
-- relativ hohe Bandbreite
 
-
-## SPI:
-
-- master/slave
-- Chipselect
-- Vollduplex
-
-## Raspi als Zentrale mit LCD als Anzeige- und Steuermöglichkeit
+## Raspi als Zentrale mit Volkszähler und grafana als Anzeige
