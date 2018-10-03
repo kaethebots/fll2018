@@ -11,7 +11,7 @@ void setup() {
   Wire.onReceive(recByteEvent);   // register event
   Wire.onRequest(sendByteEvent);  // register event
   pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
-  pinMode(2, INPUT_PULLUP); 
+  pinMode(2, INPUT_PULLUP);
   Serial.begin(9600);
   int sw01 = 0;
   Serial.println("Startup done");
@@ -33,7 +33,7 @@ void recByteEvent(int howMany) {
   Serial.print(howMany);
   while (0 < Wire.available()) {   // loop through all but the last
     Serial.println(0);
-    int recByte = Wire.read();    // receive byte as a character
+    int recByte = Wire.read();    // receive byte as an integer
     Serial.println(recByte);         // print the received byte
     if (recByte == 73)        // if the byte is 0000111, turn onboard led on
     {
@@ -55,4 +55,3 @@ void recByteEvent(int howMany) {
 void sendByteEvent() {
   Wire.write(sw01);
 }
-
