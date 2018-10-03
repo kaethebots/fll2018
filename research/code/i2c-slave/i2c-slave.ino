@@ -4,16 +4,13 @@
 
 int i2cAddress = 8;
 int example = 0b10;
-int sw01;
 
 void setup() {
   Wire.begin(i2cAddress);         // join i2c bus
   Wire.onReceive(recByteEvent);   // register event
   Wire.onRequest(sendByteEvent);  // register event
   pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
-  pinMode(2, INPUT_PULLUP);
   Serial.begin(9600);
-  int sw01 = 0;
   Serial.println("Startup done");
 }
 
@@ -53,5 +50,5 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write(sw01);
+  Wire.write(example);
 }

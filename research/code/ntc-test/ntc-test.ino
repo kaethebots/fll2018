@@ -15,12 +15,10 @@ void loop() {
   logR2 = log(R2);
   T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
   T = T - 273.15;
-//  T = (T * 9.0)/ 5.0 + 32.0; 
 
-  Serial.print("Temperature: "); 
+  Serial.print("Temperature: ");
   Serial.print(T);
-  Serial.println(" C"); 
+  Serial.println(" C");
 
   delay(500);
 }
-
