@@ -2,6 +2,8 @@
 // könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
 #include <Wire.h>
 
+#define FLOATS_SENT 1
+
 int i2cAddress = 8;
 int example = 0b10;
 int ThermistorPin = 0;
@@ -9,6 +11,7 @@ int Vo;
 float R1 = 10000;
 float logR2, R2, T;
 float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
+float data[FLOATS_SENT];
 
 
 void setup() {
@@ -17,6 +20,7 @@ void setup() {
   Wire.onRequest(sendByteEvent);  // register event
   pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
   Serial.begin(9600);
+  data[0] = T;
   Serial.println("Startup done");
 }
 
@@ -60,5 +64,5 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write(example);
+  Wire.write((byte*) &T, FLOATS_SENT*sizeof(float));
 }
