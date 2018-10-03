@@ -19,6 +19,7 @@ void setup() {
   Wire.onReceive(recByteEvent);   // register event
   Wire.onRequest(sendByteEvent);  // register event
   pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
+  pinMode(4, OUTPUT);
   Serial.begin(9600);
   data[0] = T;
   Serial.println("Startup done");
@@ -53,8 +54,16 @@ void recByteEvent(int howMany) {
     }
     else if (recByte == 74)  // if the byte is 0000100, turn onboard led off
     {
-      digitalWrite(13, LOW);
+      digitalWrite(LED_BUILTIN, LOW);
       Serial.println("led off");
+    }
+    else if (recByte == 71)
+    {
+      digitalWrite(4, HIGH);
+    }
+    else if (recByte == 72)
+    {
+      digitalWrite(4, LOW);
     }
     else
     {

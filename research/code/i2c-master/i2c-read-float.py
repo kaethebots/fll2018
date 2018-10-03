@@ -1,3 +1,5 @@
+# origin: https://gist.github.com/gileri/5a9285d6a1cfde142260
+
 import struct
 import smbus
 # for RPI version 1, use "bus = smbus.SMBus(0)"
