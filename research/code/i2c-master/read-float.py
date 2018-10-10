@@ -1,3 +1,8 @@
+# origin: https://gist.github.com/gileri/5a9285d6a1cfde142260
+#
+# modified by karlbeecken and leonelbohnet
+#
+
 import time
 import struct
 import smbus
