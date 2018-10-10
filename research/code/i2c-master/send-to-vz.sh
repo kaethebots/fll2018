@@ -12,7 +12,7 @@ vzuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
 
 while true
 do
-temp=`python test.py`
+temp=`python read-float.py`
 wget -O - -q "http://localhost/middleware.php/data/$vzuuid.json?operation=add&value=$temp" > /dev/null
 echo "$temp"
 sleep 1
