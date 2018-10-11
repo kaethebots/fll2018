@@ -1,4 +1,4 @@
-#!/bin/#!/bin/sh
+#!/bin/bash
 #
 # by karlbeecken
 # test for internal file seperator of bash
@@ -7,6 +7,10 @@
 
 IFS=','
 
-outdata='python i2c-read-float.py'
+#datain='python read-float.py'
+datain=22.434655,24.43567
 
-temp1=$(echo $outdata |)
+read temp1 temp2 <<< $datain
+
+echo "$temp1"
+echo "$temp2"
