@@ -7,7 +7,7 @@
 # debugging: just ./send-to-vz.sh
 #
 
-IFS=$'\n'
+IFS=' '
 #temp="22.75834845"
 #hum="56.46357645"
 tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
