@@ -4,7 +4,7 @@
 # by karlbeecken
 #
 # usage: ./send-to-vz.sh > /dev/null &
-# debugging: just ./send-to-vz.sh
+# debugging: just ./send-to-vz.sh and uncomment line 16
 #
 
 IFS=' '
@@ -13,7 +13,7 @@ IFS=' '
 tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
 humuuid="ec0736b0-ce3a-11e8-983d-81145097ecf6"
 datain=`python read-float.py`
-echo "$datain"
+#echo "$datain"
 
 while true
 do
