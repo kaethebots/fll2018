@@ -8,8 +8,8 @@
 #
 
 IFS=','
-temp="22.75834845"
-hum="56.46357645"
+#temp="22.75834845"
+#hum="56.46357645"
 tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
 humuuid="ec0736b0-ce3a-11e8-983d-81145097ecf6"
 

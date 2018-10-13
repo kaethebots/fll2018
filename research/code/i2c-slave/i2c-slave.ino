@@ -42,6 +42,8 @@ void loop() {
   Serial.print(T);
   Serial.println(" C");
 
+  H = 56.46357645;
+
   delay(500);
 }
 
