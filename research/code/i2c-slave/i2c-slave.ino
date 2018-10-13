@@ -42,7 +42,7 @@ void loop() {
   Serial.print(T);
   Serial.println(" C");
 
-  H = 56.46357645;
+  H = 56.123;
 
   delay(500);
 }
@@ -81,5 +81,5 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write((byte*) &T, FLOATS_SENT*sizeof(float));
+  Wire.write((byte*) &H, FLOATS_SENT*sizeof(float));
 }
