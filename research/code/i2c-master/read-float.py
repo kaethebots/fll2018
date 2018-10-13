@@ -23,7 +23,7 @@ def get_float(data, index):
 while True:
     try:
         data = get_data()
-        print(get_float(data, 0)get_float(data, 1))
+        print(get_float(data, 0), get_float(data, 1))
 	break
     except:
         continue
