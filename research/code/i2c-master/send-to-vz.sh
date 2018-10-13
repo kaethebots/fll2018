@@ -23,5 +23,5 @@ do
   echo "$temp"
   wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null
   echo "$hum"
-  sleep 0.5
+  sleep 10
 done
