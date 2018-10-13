@@ -5,7 +5,7 @@
 // könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
 #include <Wire.h>
 
-#define FLOATS_SENT 1
+#define FLOATS_SENT 2
 
 int i2cAddress = 8;
 int example = 0b10;
@@ -13,8 +13,10 @@ int ThermistorPin = 0;
 int Vo;
 float R1 = 10000;
 float logR2, R2, T;
+float H;
 float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
 float data[FLOATS_SENT];
+
 
 
 void setup() {
@@ -25,6 +27,7 @@ void setup() {
   pinMode(4, OUTPUT);
   Serial.begin(9600);
   data[0] = T;
+  data[1] = H;
   Serial.println("Startup done");
 }
 
@@ -38,6 +41,8 @@ void loop() {
   Serial.print("Temperature: ");
   Serial.print(T);
   Serial.println(" C");
+
+  H = 56.123;
 
   delay(500);
 }
@@ -76,5 +81,5 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write((byte*) &T, FLOATS_SENT*sizeof(float));
+  Wire.write((byte*) &H, FLOATS_SENT*sizeof(float));
 }

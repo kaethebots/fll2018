@@ -23,7 +23,9 @@ def get_float(data, index):
 while True:
     try:
         data = get_data()
-        print(get_float(data, 0))
+        temp = get_float(data, 0)
+        hum= get_float(data, 1)
+        print hum,temp
 	break
     except:
         continue
