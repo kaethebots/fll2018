@@ -17,6 +17,7 @@ datain=`python read-float.py`
 
 while true
 do
+echo "$datain"
 read temp hum <<< $datain
 wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null
 echo "$temp"
