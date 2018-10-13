@@ -24,6 +24,7 @@ while True:
     try:
         data = get_data()
         print(get_float(data, 0))
+        print(get_float(data, 1))
 	break
     except:
         continue

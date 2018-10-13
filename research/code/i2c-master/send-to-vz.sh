@@ -7,13 +7,19 @@
 # debugging: just ./send-to-vz.sh
 #
 
+IFS=','
 temp="22.75834845"
-vzuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
+hum="56.46357645"
+tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"
+humuuid="ec0736b0-ce3a-11e8-983d-81145097ecf6"
 
 while true
 do
-temp=`python read-float.py`
-wget -O - -q "http://localhost/middleware.php/data/$vzuuid.json?operation=add&value=$temp" > /dev/null
+datain=`python read-float.py`
+read temp hum <<< $datain
+wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null
 echo "$temp"
-sleep 1
+wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null
+echo "&hum"
+sleep 0.5
 done
