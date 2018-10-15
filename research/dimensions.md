@@ -12,3 +12,5 @@
 
 ## Grundfläche
 30cm²
+
+Abmessungen DHT22: https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf
