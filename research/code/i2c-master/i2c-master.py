@@ -21,8 +21,6 @@ try:
 except IndexError:
     senden = 42
 
-parser.parse_args()
-
 def writeNumber(value):
     bus.write_byte(address, value)
     return -1
