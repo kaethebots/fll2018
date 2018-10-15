@@ -30,6 +30,8 @@ def writeI2C():
     print addr,val
     bus.write_byte(addr,val)
     return
+
+writeI2C()
 #    return -1
 
 #def readNumber():
