@@ -18,7 +18,7 @@ val = chr
 try:
     addr = sys.argv[1]
 except IndexError:
-    addr = 8
+    addr = 0x08
 
 try:
     val = sys.argv[2]
