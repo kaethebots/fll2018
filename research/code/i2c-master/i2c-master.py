@@ -18,7 +18,7 @@ bus = smbus.SMBus(1)
 try:
     addr = int(sys.argv[1])
 except IndexError:
-addr = 0x08
+    addr = 0x08
 
 try:
     val = int(sys.argv[2])
