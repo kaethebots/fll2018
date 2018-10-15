@@ -17,13 +17,14 @@ except IndexError:
     address = 8
 
 try:
-    senden = sys.argv[2]
+    value = sys.argv[2]
 except IndexError:
-    senden = 42
+    value = 42
 
-def writeNumber(value):
-    bus.write_byte(address, value)
-    return -1
+#def writeNumber(value):
+print address,value
+bus.write_byte(address, value)
+#    return -1
 
 #def readNumber():
 #    number = bus.read_byte(address)
@@ -34,9 +35,9 @@ def writeNumber(value):
 #    if not senden:
 #        continue
 #
-    writeNumber(senden)
-    print "Raspberry schickt folgenden Wert: ", senden
-    time.sleep(1)
+#    writeNumber(senden)
+#    print "Raspberry schickt folgenden Wert: ", senden
+#    time.sleep(1)
 
 #    empfang = readNumber()
 #    print "Der Arduino schickt folgenden Wert: ", empfang
