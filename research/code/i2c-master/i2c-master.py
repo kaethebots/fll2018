@@ -15,10 +15,10 @@ bus = smbus.SMBus(1)
 addr = int
 val = chr
 
-try:
-    addr = sys.argv[1]
-except IndexError:
-    addr = 0x08
+#try:
+#    addr = sys.argv[1]
+#except IndexError:
+addr = 0x08
 
 try:
     val = sys.argv[2]
