@@ -23,7 +23,7 @@ except IndexError:
 try:
     val = sys.argv[2]
 except IndexError:
-    val = 73
+    val = 74
 
 #def writeNumber(value):
 def writeI2C():
