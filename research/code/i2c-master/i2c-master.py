@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #
 # origin: https://codingworld.io/project/den-arduino-mit-dem-raspberry-pi-verbinden-i2c
+# can be helpful: http://wiki.erazor-zone.de/wiki:linux:python:smbus:doc
 #
 # modified by karlbeecken
 #
@@ -10,6 +11,9 @@ import smbus
 import time
 import sys
 bus = smbus.SMBus(1)
+
+addr = 8
+val = 74
 
 try:
     addr = sys.argv[1]
