@@ -26,8 +26,10 @@ except IndexError:
     val = 73
 
 #def writeNumber(value):
-print addr,val
-bus.write_byte(addr,val)
+def writeI2C():
+    print addr,val
+    bus.write_byte(addr,val)
+    return
 #    return -1
 
 #def readNumber():
