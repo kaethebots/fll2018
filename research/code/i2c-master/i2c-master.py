@@ -12,23 +12,23 @@ import time
 import sys
 bus = smbus.SMBus(1)
 
-addr = int
-val = chr
+#addr = int
+#val = chr
 
-#try:
-#    addr = sys.argv[1]
-#except IndexError:
+try:
+    addr = int(sys.argv[1])
+except IndexError:
 addr = 0x08
 
 try:
-    val = sys.argv[2]
+    val = int(sys.argv[2])
 except IndexError:
     val = 74
 
 #def writeNumber(value):
 def writeI2C():
     print addr,val
-    bus.write_byte(8,val)
+    bus.write_byte(addr,val)
     return
 
 writeI2C()
