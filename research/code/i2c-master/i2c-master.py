@@ -13,7 +13,7 @@ import sys
 bus = smbus.SMBus(1)
 
 addr = int
-val = char
+val = chr
 
 try:
     addr = sys.argv[1]
