@@ -38,5 +38,5 @@ def writeNumber(value):
     print "Raspberry schickt folgenden Wert: ", senden
     time.sleep(1)
 
-    empfang = readNumber()
-    print "Der Arduino schickt folgenden Wert: ", empfang
+#    empfang = readNumber()
+#    print "Der Arduino schickt folgenden Wert: ", empfang
