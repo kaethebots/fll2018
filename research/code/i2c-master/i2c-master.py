@@ -12,8 +12,8 @@ import time
 import sys
 bus = smbus.SMBus(1)
 
-addr = 8
-val = 74
+addr = int
+val = char
 
 try:
     addr = sys.argv[1]
