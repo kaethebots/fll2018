@@ -28,7 +28,7 @@ except IndexError:
 #def writeNumber(value):
 def writeI2C():
     print addr,val
-    bus.write_byte(addr,val)
+    bus.write_byte(8,val)
     return
 
 writeI2C()
