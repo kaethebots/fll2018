@@ -19,11 +19,11 @@ except IndexError:
 try:
     value = sys.argv[2]
 except IndexError:
-    value = 42
+    value = 73
 
 #def writeNumber(value):
 print address,value
-bus.write_byte(address, value)
+bus.write_byte(8, 73)
 #    return -1
 
 #def readNumber():
