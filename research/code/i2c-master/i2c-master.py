@@ -12,18 +12,18 @@ import sys
 bus = smbus.SMBus(1)
 
 try:
-    address = sys.argv[1]
+    addr = sys.argv[1]
 except IndexError:
-    address = 8
+    addr = 8
 
 try:
-    value = sys.argv[2]
+    val = sys.argv[2]
 except IndexError:
-    value = 73
+    val = 73
 
 #def writeNumber(value):
-print address,value
-bus.write_byte(8, 73)
+print addr,val
+bus.write_byte(addr,val)
 #    return -1
 
 #def readNumber():
