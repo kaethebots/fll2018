@@ -5,4 +5,5 @@
 - XT60-Paare https://bit.ly/2yjMPlw
 - Buchsenleiste: https://bit.ly/2AdAmRz
 - Steckerleiste: https://bit.ly/2Ckeci0
+- Arduino Nano: https://bit.ly/2pVe9C7
 - Preis: ~~21,45 €~~ (nicht aktuell muss neu ausgerechnet werden)
