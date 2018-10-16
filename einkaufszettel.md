@@ -5,4 +5,4 @@
 - XT60-Paare https://bit.ly/2yjMPlw
 - Buchsenleiste: https://bit.ly/2AdAmRz
 - Steckerleiste: https://bit.ly/2Ckeci0
-- Preis: 19,92 € (ohne Vewrsandkosten)
+- Preis: 21,45 € (ohne Versandkosten)
