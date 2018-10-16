@@ -12,9 +12,6 @@ import time
 import sys
 bus = smbus.SMBus(1)
 
-#addr = int
-#val = chr
-
 try:
     addr = int(sys.argv[1])
 except IndexError:
@@ -25,27 +22,9 @@ try:
 except IndexError:
     val = 74
 
-#def writeNumber(value):
 def writeI2C():
     print addr,val
     bus.write_byte(addr,val)
     return
 
 writeI2C()
-#    return -1
-
-#def readNumber():
-#    number = bus.read_byte(address)
-#    return number
-
-#while True:
-#    senden = input("Geraeteaddresse und -zustand: ")
-#    if not senden:
-#        continue
-#
-#    writeNumber(senden)
-#    print "Raspberry schickt folgenden Wert: ", senden
-#    time.sleep(1)
-
-#    empfang = readNumber()
-#    print "Der Arduino schickt folgenden Wert: ", empfang
