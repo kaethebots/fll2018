@@ -27,3 +27,4 @@ def writeI2C():
     return
 
 writeI2C()
+print("Success")
