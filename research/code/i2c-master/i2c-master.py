@@ -27,7 +27,7 @@ bus = smbus.SMBus(1)
 
 try:                    # reads the first cli argument
     addr = int(sys.argv[1])
-except IndexError:      # error hndling for IndexErrors
+except IndexError:      # error handling for IndexErrors
     addr = 0x08
 
 try:                    # reads the second cli argument
