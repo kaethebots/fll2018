@@ -20,25 +20,25 @@
 #
 # usage: i2c-master.py <i2cAddress> <value to send>
 
-import smbus
+import smbus            # imports all the needed librarys
 import time
 import sys
 bus = smbus.SMBus(1)
 
-try:
+try:                    # reads the first cli argument
     addr = int(sys.argv[1])
-except IndexError:
+except IndexError:      # error hndling for IndexErrors
     addr = 0x08
 
-try:
+try:                    # reads the second cli argument
     val = int(sys.argv[2])
-except IndexError:
+except IndexError:      # error handling for IndexErrors
     val = 74
 
-def writeI2C():
-    print addr,val
-    bus.write_byte(addr,val)
+def writeI2C():         # defines function for sending the data over the i2c bus
+    print addr,val      # debug output
+    bus.write_byte(addr,val) # finally sends the data
     return
 
-writeI2C()
-print("Success")
+writeI2C()              # executes the function
+print("Success")        # debug output
