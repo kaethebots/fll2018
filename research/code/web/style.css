@@ -2,4 +2,5 @@
   width: 760px;
   height: 480px;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
