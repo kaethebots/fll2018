@@ -4,6 +4,7 @@
 // DS18B20 library: https://github.com/milesburton/Arduino-Temperature-Control-Library
 // 1-Wire library: https://github.com/PaulStoffregen/OneWire
 // DHT22 library: https://github.com/adafruit/DHT-sensor-library
+// Unified sensor library: https://github.com/adafruit/Adafruit_Sensor
 #include <Wire.h>
 
 #define FLOATS_SENT 2
