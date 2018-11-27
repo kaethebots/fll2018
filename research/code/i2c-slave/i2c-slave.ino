@@ -1,8 +1,9 @@
 //
 // by karlbeecken and leonelbohnet
 //
-// origin: https://www.arduino.cc/en/Tutorial/MasterWriter
-// könnte auch interessant sein https://forum.arduino.cc/index.php?topic=442897.15
+// DS18B20 library: https://github.com/milesburton/Arduino-Temperature-Control-Library
+// 1-Wire library: https://github.com/PaulStoffregen/OneWire
+// DHT22 library: https://github.com/adafruit/DHT-sensor-library
 #include <Wire.h>
 
 #define FLOATS_SENT 2
