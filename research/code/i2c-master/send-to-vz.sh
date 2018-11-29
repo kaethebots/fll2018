@@ -12,6 +12,7 @@ IFS=' '                   # sets the IFS to space
 #hum="56.46357645"
 tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"   # put here your vz-uuid for the temperature sensor
 humuuid="ec0736b0-ce3a-11e8-983d-81145097ecf6"    # put here your vz-uuid for the humidity sensor
+temp2uuid="0b22b680-f3ec-11e8-93dc-ef508458ba74"  # put here your vz-uuid for the 2nd temperature sensor
 #echo "$datain"
 
 while true        # loop every 10 seconds
@@ -23,5 +24,7 @@ do
   echo "$temp"                        # debug output
   wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null   # sends the hum value to vz
   echo "$hum"                         # debug output
+  wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp value to vz
+  echo "$temp2"
   sleep 10
 done
