@@ -5,10 +5,12 @@
 // 1-Wire library: https://github.com/PaulStoffregen/OneWire
 // DHT22 library: https://github.com/adafruit/DHT-sensor-library
 // Unified sensor library: https://github.com/adafruit/Adafruit_Sensor
-#include <Arduino.>
 #include <Wire.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
-#define FLOATS_SENT 2
+#define FLOATS_SENT 3
+#define ONE_WIRE_BUS 2
 
 int i2cAddress = 8;
 int example = 0b10;
@@ -19,6 +21,9 @@ float logR2, R2, T;
 float H;
 float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
 float data[FLOATS_SENT];
+float T2;
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
 
 
 
@@ -31,6 +36,8 @@ void setup() {
   Serial.begin(9600);
   data[0] = T;
   data[1] = H;
+  data[2] = T2;
+  sensors.begin();
   Serial.println("Startup done");
 }
 
@@ -44,6 +51,9 @@ void loop() {
   Serial.print("Temperature: ");
   Serial.print(T);
   Serial.println(" C");
+
+  sensors.requestTemperatures();
+  T2 = sensors.getTempCByIndex(0);
 
   H = 56.123;
 

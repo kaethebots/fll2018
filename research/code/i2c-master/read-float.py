@@ -25,7 +25,8 @@ while True:
         data = get_data()
         temp = get_float(data, 0)
         hum = get_float(data, 1)
-        print hum,temp
+        temp2 = get_float(data, 2)
+        print hum,temp,temp2
 	break
     except:
         continue
