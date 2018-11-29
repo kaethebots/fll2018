@@ -26,8 +26,8 @@ while True:
         temp = get_float(data, 0)
         hum = get_float(data, 1)
         temp2 = get_float(data, 2)
-        print temp2,hum,temp
-	break
+        print temp2,temp,hum
+    	break
     except:
         continue
 time.sleep(0.05);
