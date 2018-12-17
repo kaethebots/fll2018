@@ -51,11 +51,12 @@ void setup() {
 }
 
 void loop() {
-  Vo = analogRead(ThermistorPin);
-  R2 = R1 * (1023.0 / (float)Vo - 1.0);
-  logR2 = log(R2);
-  T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
-  T = T - 273.15;
+//  Vo = analogRead(ThermistorPin);
+//  R2 = R1 * (1023.0 / (float)Vo - 1.0);
+//  logR2 = log(R2);
+//  T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
+//  T = T - 273.15;
+
 
   Serial.print("Temperature: ");
   Serial.print(T);
@@ -64,12 +65,12 @@ void loop() {
   sensors.requestTemperatures();
   T2 = sensors.getTempCByIndex(0);
 
-  H = 56.123;
-
   updateTempHum();
   Serial.print(T_DHT);
   Serial.print(H_DHT);
   Serial.println("(DHT values)");
+  H = H_DHT;
+  T = T_DHT;
 
   delay(500);
 }
