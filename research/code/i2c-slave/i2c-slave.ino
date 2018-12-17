@@ -70,12 +70,12 @@ void recByteEvent(int howMany) {
     Serial.println(0);
     int recByte = Wire.read();    // receive byte as an integer
     Serial.println(recByte);         // print the received byte
-    if (recByte == 73)        // if the byte is 0000111, turn onboard led on
+    if (recByte == 73)        // if the byte is 73, turn onboard led on
     {
       digitalWrite(LED_BUILTIN, HIGH);
       Serial.println("led on");
     }
-    else if (recByte == 74)  // if the byte is 0000100, turn onboard led off
+    else if (recByte == 74)  // if the byte is 74, turn onboard led off
     {
       digitalWrite(LED_BUILTIN, LOW);
       Serial.println("led off");
