@@ -18,13 +18,6 @@
 #define DHTTYPE DHT22
 
 int i2cAddress = 8;
-int example = 0b10;
-int ThermistorPin = 0;
-int Vo;
-float R1 = 10000;
-float logR2, R2, T;
-float H;
-float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
 float data[FLOATS_SENT];
 float T2;
 float T_DHT, H_DHT;
@@ -42,8 +35,8 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);   // defines onboard led as output
   pinMode(4, OUTPUT);
   Serial.begin(9600);
-  data[0] = T;
-  data[1] = H;
+  data[0] = T_DHT;
+  data[1] = H_DHT;
   data[2] = T2;
   sensors.begin();
   dht.begin();
@@ -51,15 +44,9 @@ void setup() {
 }
 
 void loop() {
-//  Vo = analogRead(ThermistorPin);
-//  R2 = R1 * (1023.0 / (float)Vo - 1.0);
-//  logR2 = log(R2);
-//  T = (1.0 / (c1 + c2*logR2 + c3*logR2*logR2*logR2));
-//  T = T - 273.15;
-
 
   Serial.print("Temperature: ");
-  Serial.print(T);
+  Serial.print(T2);
   Serial.println(" C");
 
   sensors.requestTemperatures();
@@ -69,8 +56,6 @@ void loop() {
   Serial.print(T_DHT);
   Serial.print(H_DHT);
   Serial.println("(DHT values)");
-  H = H_DHT;
-  T = T_DHT;
 
   delay(500);
 }
@@ -109,7 +94,7 @@ void recByteEvent(int howMany) {
 }
 
 void sendByteEvent() {
-  Wire.write((byte*) &H, FLOATS_SENT*sizeof(float));
+  Wire.write((byte*) &H_DHT, FLOATS_SENT*sizeof(float));
 }
 
 void updateTempHum()
