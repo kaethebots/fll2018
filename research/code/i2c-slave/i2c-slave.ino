@@ -8,9 +8,14 @@
 #include <Wire.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
 
 #define FLOATS_SENT 3
 #define ONE_WIRE_BUS 2
+#define DHTPIN 4
+#define DHTTYPE DHT22
 
 int i2cAddress = 8;
 int example = 0b10;
@@ -22,9 +27,12 @@ float H;
 float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
 float data[FLOATS_SENT];
 float T2;
+float T_DHT, H_DHT;
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
+DHT_Unified dht(DHTPIN, DHTTYPE);
 
+uint32_t delayMS;
 
 
 void setup() {
@@ -38,6 +46,7 @@ void setup() {
   data[1] = H;
   data[2] = T2;
   sensors.begin();
+  dht.begin();
   Serial.println("Startup done");
 }
 
@@ -56,6 +65,11 @@ void loop() {
   T2 = sensors.getTempCByIndex(0);
 
   H = 56.123;
+
+  updateTempHum();
+  Serial.print(T_DHT);
+  Serial.print(H_DHT);
+  Serial.println("(DHT values)");
 
   delay(500);
 }
@@ -95,4 +109,10 @@ void recByteEvent(int howMany) {
 
 void sendByteEvent() {
   Wire.write((byte*) &H, FLOATS_SENT*sizeof(float));
+}
+
+void updateTempHum()
+{
+  T_DHT = dht.readTemperature();
+  H_DHT = dht.readHumidity();
 }

@@ -4,7 +4,7 @@
 # by karlbeecken
 #
 # usage: ./send-to-vz.sh > /dev/null &
-# debugging: just ./send-to-vz.sh and uncomment line 15
+# debugging: just ./send-to-vz.sh and uncomment line 16
 #
 
 IFS=' '                   # sets the IFS to space
