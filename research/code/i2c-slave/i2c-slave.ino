@@ -54,7 +54,9 @@ void loop() {
 
   updateTempHum();
   Serial.print(T_DHT);
+  Serial.print("  ");
   Serial.print(H_DHT);
+  Serial.print("  ");
   Serial.println("(DHT values)");
 
   delay(500);
