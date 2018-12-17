@@ -113,6 +113,9 @@ void sendByteEvent() {
 
 void updateTempHum()
 {
-  T_DHT = dht.readTemperature();
-  H_DHT = dht.readHumidity();
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  T_DHT = event.temperature;
+  dht.humidity().getEvent(&event);
+  H_DHT = event.relative_humidity;
 }
