@@ -26,5 +26,5 @@ do
   echo "$hum"                         # debug output
   wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp value to vz
   echo "$temp2"
-  sleep 10
+  sleep 2
 done

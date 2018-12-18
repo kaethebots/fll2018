@@ -11,6 +11,7 @@
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 #include <DHT_U.h>
+#include <avr/wdt.h>
 
 #define FLOATS_SENT 3
 #define ONE_WIRE_BUS 2
@@ -40,6 +41,7 @@ void setup() {
   data[2] = T2;
   sensors.begin();
   dht.begin();
+  wdt_enable(WDTO_8S);
   Serial.println("Startup done");
 }
 
@@ -88,7 +90,6 @@ void recByteEvent(int howMany) {
     {
       digitalWrite(4, LOW);
     }
-    else
     {
       Serial.println("Empfangenes Byte konnte nicht gelesen werden.");
     }
@@ -97,6 +98,7 @@ void recByteEvent(int howMany) {
 
 void sendByteEvent() {
   Wire.write((byte*) &H_DHT, FLOATS_SENT*sizeof(float));
+  wdt_reset();
 }
 
 void updateTempHum()
