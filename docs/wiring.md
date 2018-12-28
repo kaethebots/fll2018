@@ -11,7 +11,7 @@ D11 => LED-Stripe blue pin
 GND => +12V (common anode)
 ```
 
-##### DHT22:
+##### DHT22 (preassembled module):
 ```
 5V  => 5V
 D4  => DATA
