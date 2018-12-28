@@ -23,4 +23,5 @@ GND => GND
 5V  => 5V
 D2  => DATA
 GND => GND
+4.7kOhm resistor between DATA and 5V
 ```
