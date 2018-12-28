@@ -2,7 +2,3 @@
 # First Lego League 2018 am KKG
 
 __Notizen__ und __Code__ zur Forschungsaufgabe.
-
-## Dependencies:
-
-https://github.com/milesburton/Arduino-Temperature-Control-Library
