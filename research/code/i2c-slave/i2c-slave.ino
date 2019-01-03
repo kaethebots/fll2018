@@ -12,11 +12,17 @@
 #include <DHT.h>
 #include <DHT_U.h>
 #include <avr/wdt.h>
+#include <RGBLED.h>
+#include <RGBColor.h>
 
 #define FLOATS_SENT 3
 #define ONE_WIRE_BUS 2
 #define DHTPIN 4
 #define DHTTYPE DHT22
+
+RGBLED rgbLED = RGBLED(9, 10, 11, 0, 2, 1);
+RGBColor off = RGBColor(100, 100, 100);
+RGBColor white = RGBColor(0, 0, 0);
 
 int i2cAddress = 8;
 float data[FLOATS_SENT];
@@ -41,6 +47,8 @@ void setup() {
   data[2] = T2;
   sensors.begin();
   dht.begin();
+  rgbLED.setIntensity(100);
+  rgbLED.setColor(off);
   wdt_enable(WDTO_8S);
   Serial.println("Startup done");
 }
@@ -84,11 +92,11 @@ void recByteEvent(int howMany) {
     }
     else if (recByte == 71)
     {
-      digitalWrite(4, HIGH);
+      rgbLED.setColor(white);
     }
     else if (recByte == 72)
     {
-      digitalWrite(4, LOW);
+      rgbLED.setColor(off);
     }
     {
       Serial.println("Empfangenes Byte konnte nicht gelesen werden.");

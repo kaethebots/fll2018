@@ -21,4 +21,6 @@ https://github.com/adafruit/DHT-sensor-library
 
 https://github.com/PaulStoffregen/OneWire
 
+https://github.com/karlbeecken/crossfade
+
 ## Code only works with optiboot, I recommend OptiLoader by WestfW https://github.com/WestfW/OptiLoader
