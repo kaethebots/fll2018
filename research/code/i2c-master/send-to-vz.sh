@@ -27,7 +27,7 @@ do
   if [ "$hum" != "0.0" ]
     then
     wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
-    echo "$temp"                                # debug output
+    echo "$temp"                       # debug output
   fi
   fi
   fi
@@ -44,7 +44,7 @@ do
     if [ "$temp2" != "0.0" ]
     then
     wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp2 value to vz
-    echo "$temp2"
+    echo "$temp2"                      # debug output
     fi
   fi
   sleep 2
