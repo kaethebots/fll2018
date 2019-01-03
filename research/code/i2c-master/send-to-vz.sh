@@ -20,20 +20,26 @@ do
   datain=$(python read-float.py)      # defines the data input (= read script)
   echo "$datain"                      # debug output
   read temp hum temp2 <<< $datain     # seperates the data input into temp and hum values
-if [ "$temp" != "-127.0" ]
+  if [ "$temp" != "-127.0" ]
   then
     wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
     echo "$temp"
   fi
   if [ $hum != nan ]
   then                                # debug output
+  if [ "$hum" != "0.0" ]
+    then
     wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null   # sends the hum value to vz
     echo "$hum"                       # debug output
   fi
+  fi
   if [ $temp2 != nan ]
   then
+    if [ "$temp2" != "0.0" ]
+    then
     wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp2 value to vz
     echo "$temp2"
+    fi
   fi
   sleep 2
 done
