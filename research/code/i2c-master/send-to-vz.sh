@@ -20,7 +20,7 @@ do
   datain=$(python read-float.py)      # defines the  data input (= read script)
   echo "$datain"                      # debug output
   read temp hum temp2 <<< $datain     # seperates the data input into temp and hum values
-if (( $(echo "$temp -127.0" | awk '{print ($temp = -127.0)}') ))
+if (( $(echo "$temp -127" | awk '{print ($temp = -127)}') ))
   then
     wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
     echo "$temp"
