@@ -19,12 +19,21 @@ while true        # loop every 10 seconds
 do
   datain=$(python read-float.py)      # defines the  data input (= read script)
   echo "$datain"                      # debug output
-  read temp hum temp2 <<< $datain           # seperates the data input into temp and hum values
-  wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
-  echo "$temp"                        # debug output
-  wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null   # sends the hum value to vz
-  echo "$hum"                         # debug output
-  wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp value to vz
-  echo "$temp2"
+  read temp hum temp2 <<< $datain     # seperates the data input into temp and hum values
+  if [ $temp -ne -127.0 ]
+  then
+    wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
+    echo "$temp"
+  fi
+  if [ $hum -ne nan ]
+  then                                # debug output
+    wget -O - -q "http://localhost/middleware.php/data/$humuuid.json?operation=add&value=$hum" > /dev/null   # sends the hum value to vz
+    echo "$hum"                       # debug output
+  fi
+  if [ $temp2 -ne nan ]
+  then
+    wget -O - -q "http://localhost/middleware.php/data/$temp2uuid.json?operation=add&value=$temp2" > /dev/null # sends the temp2 value to vz
+    echo "$temp2"
+  fi
   sleep 2
 done
