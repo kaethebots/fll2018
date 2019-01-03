@@ -24,8 +24,11 @@ do
   then
   if [ "$temp" != "-127.0" ]
   then
+  if [ "$hum" != "0.0" ]
+    then
     wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
     echo "$temp"                                # debug output
+  fi
   fi
   fi
   if [ $hum != nan ]
