@@ -20,3 +20,5 @@ https://github.com/adafruit/Adafruit_Sensor
 https://github.com/adafruit/DHT-sensor-library
 
 https://github.com/PaulStoffregen/OneWire
+
+## Code only works with optiboot, I recommend OptiLoader by WestfW https://github.com/WestfW/OptiLoader
