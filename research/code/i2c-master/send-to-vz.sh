@@ -17,10 +17,10 @@ temp2uuid="0b22b680-f3ec-11e8-93dc-ef508458ba74"  # put here your vz-uuid for th
 
 while true        # loop every 10 seconds
 do
-  datain=$(python read-float.py)      # defines the  data input (= read script)
+  datain=$(python read-float.py)      # defines the data input (= read script)
   echo "$datain"                      # debug output
   read temp hum temp2 <<< $datain     # seperates the data input into temp and hum values
-if [ "$temp" != "-127" ]
+if [ "$temp" != "-127.0" ]
   then
     wget -O - -q "http://localhost/middleware.php/data/$tempuuid.json?operation=add&value=$temp" > /dev/null # sends the temp value to vz
     echo "$temp"
