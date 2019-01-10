@@ -20,9 +20,9 @@
 #define DHTPIN 4
 #define DHTTYPE DHT22
 
-RGBLED rgbLED = RGBLED(9, 10, 11, 0, 2, 1);
-RGBColor off = RGBColor(100, 100, 100);
-RGBColor white = RGBColor(0, 0, 0);
+//RGBLED rgbLED = RGBLED(9, 10, 11, 5, 5, 1);
+//RGBColor off = RGBColor(100, 100, 100);
+//RGBColor white = RGBColor(0, 0, 0);
 
 int i2cAddress = 8;
 float data[FLOATS_SENT];
@@ -47,8 +47,11 @@ void setup() {
   data[2] = T2;
   sensors.begin();
   dht.begin();
-  rgbLED.setIntensity(100);
-  rgbLED.setColor(off);
+//  rgbLED.setIntensity(100);
+//  rgbLED.setColor(off);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
   wdt_enable(WDTO_8S);
   Serial.println("Startup done");
 }
@@ -92,11 +95,15 @@ void recByteEvent(int howMany) {
     }
     else if (recByte == 71)
     {
-      rgbLED.setColor(white);
+      digitalWrite(9, HIGH);
+      digitalWrite(10, HIGH);
+      digitalWrite(11, HIGH);
     }
     else if (recByte == 72)
     {
-      rgbLED.setColor(off);
+      digitalWrite(9, LOW);
+      digitalWrite(10, LOW);
+      digitalWrite(11, LOW);
     }
     {
       Serial.println("Empfangenes Byte konnte nicht gelesen werden.");
