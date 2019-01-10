@@ -98,6 +98,10 @@ void recByteEvent(int howMany) {
     {
       rgbLED.setColor(off);
     }
+    else if (recByte == 10)
+    {
+      wdt_reset();
+    }
     {
       Serial.println("Empfangenes Byte konnte nicht gelesen werden.");
     }
