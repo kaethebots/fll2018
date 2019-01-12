@@ -10,9 +10,9 @@
 IFS=' '                   # sets the IFS to space
 #temp="22.75834845"
 #hum="56.46357645"
-tempuuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"   # put here your vz-uuid for the temperature sensor
+temp2uuid="af1e5b80-c70b-11e8-93fa-ddbac8086c38"   # put here your vz-uuid for the temperature sensor
 humuuid="ec0736b0-ce3a-11e8-983d-81145097ecf6"    # put here your vz-uuid for the humidity sensor
-temp2uuid="0b22b680-f3ec-11e8-93dc-ef508458ba74"  # put here your vz-uuid for the 2nd temperature sensor
+tempuuid="0b22b680-f3ec-11e8-93dc-ef508458ba74"  # put here your vz-uuid for the 2nd temperature sensor
 #echo "$datain"
 
 while true        # loop every 10 seconds
