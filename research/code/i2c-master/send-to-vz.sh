@@ -19,7 +19,7 @@ while true        # loop every 10 seconds
 do
   datain=$(python read-float.py)      # defines the data input (= read script)
   echo "$datain"                      # debug output
-  read temp hum temp2 <<< $datain     # seperates the data input into temp and hum values
+  read temp2 hum temp <<< $datain     # seperates the data input into temp and hum values
   if [ $hum != nan ]
   then
   if [ "$temp" != "-127.0" ]
