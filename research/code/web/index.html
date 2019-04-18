@@ -2,8 +2,10 @@
 <html>
         <head>
                 <title>Gew&auml;chsh&auml;user</title>
+                <meta charset="utf-8"  />
                 <link rel="icon" type="image/png" href="favicon.png" />
                 <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+                <link rel="stylesheet" href="style.css">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         </head>
@@ -11,18 +13,27 @@
                         <div class="container-fluid">
                         <div class="row">
                         <div class="col-md-12">
-                                <nav class="navbar navbar-light sticky-top bg-info">
+                                <nav class="navbar navbar-light sticky-top bg-light">
                                         <span class="navbar-brand mb-0 h1">
-                                                <h1>
+                                                <h2>
                                                         Gew&auml;chshaussteuerung
-                                                </h1>
+                                                </h2>
                                         </span>
+                                                <a class="nav-link active" href="#">Gew&auml;chshaus 1</a>
+                                        </li>
+                                                <a class="nav-link" href="#">Gew&auml;chshaus 2</a>
+                                        </li>
+                                                <a class="nav-link" href="#">Gew&auml;chshaus 3</a>
+                                        </li>
+                                                <a class="nav-link" href="#">Gew&auml;chshaus 4</a>
+                                        </li>
+
                                 </nav>
-                                <br>
+                                <br />
                                 <h3>
                                         Gew&auml;chshaus 1
                                 </h3>
-                                <br>
+                                <br />
                                 <div class="btn-group" role="group">
 
                                         <button class="btn btn-success" type="button" id="btn-mainon">
@@ -32,7 +43,8 @@
                                                 Licht aus
                                         </button>
                                 </div>
-                                <br>
+                                <br />
+                                <div class="w-100"></div>
                                 <div style="height: 10px;"></div>
                                 <div class="btn-group" role="group">
 
@@ -44,11 +56,13 @@
                                         </button>
                                 </div>
                         </div>
+                        <br />
+                        <div class="w-100"></div>
                         <div class="well span6" style="padding-top: 50px">
-                          <iframe src="http://karl-beecken.de:3000/d-solo/ILbsDszgk/temp-humi?refresh=30s1&panelId=2&orgId=&from=now-1h-10m&to=now-10m&theme=dark" width="760" height="480" frameborder="0" scrolling="no"></iframe>
-                            <div class="well span6" style="padding-top: 50px">
-                              <a class="btn" href="https://github.com/kaethebots/fll2018">View code >></a>
-                            </div>
+                        <iframe src="http://karl-beecken.de:3000/d-solo/ILbsDszgk/temp-humi?refresh=30s1&panelId=2&orgId=&from=now-1h-10m&to=now-10m&theme=dark" frameborder="0" class="grafana-iframe" style="overflow:hidden;"></iframe>
+                          <div class="well span6" style="padding-top: 50px">
+                            <a class="btn" href="https://github.com/kaethebots/fll2018">View code >></a>
+                          </div>
                         </div>
                       </div>
                       </div>

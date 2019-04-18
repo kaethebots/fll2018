@@ -1,0 +1,7 @@
+.grafana-iframe {
+  width: 760px;
+  height: 480px;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
